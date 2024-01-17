@@ -1,4 +1,4 @@
-import { createStore, loadAndBundleSpec } from 'redoc';
+import { createStore, loadAndBundleSpec } from '@fakeyanss/redoc';
 import { renderToString } from 'react-dom/server';
 import { handlerBuildCommand } from '../../commands/build-docs';
 import { BuildDocsArgv } from '../../commands/build-docs/types';
@@ -30,7 +30,7 @@ describe('build-docs', () => {
   it('should return correct html and call function for ssr', async () => {
     const result = await getPageHTML({}, '../some-path/openapi.yaml', {
       ...config,
-      redocCurrentVersion: '2.0.0',
+      redocCurrentVersion: '2.1.0',
     });
     expect(renderToString).toBeCalledTimes(1);
     expect(createStore).toBeCalledTimes(1);

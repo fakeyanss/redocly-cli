@@ -1,4 +1,4 @@
-import { loadAndBundleSpec } from 'redoc';
+import { loadAndBundleSpec } from '@fakeyanss/redoc';
 import { dirname, resolve } from 'path';
 import { writeFileSync, mkdirSync } from 'fs';
 import { performance } from 'perf_hooks';
@@ -25,7 +25,7 @@ export const handlerBuildCommand = async (argv: BuildDocsArgv, configFromFile: C
     redocOptions: getObjectOrJSON(argv.theme?.openapi, config),
   };
 
-  const redocCurrentVersion = require('../../../package.json').dependencies.redoc.substring(1); // remove ~
+  const redocCurrentVersion = require('../../../package.json').dependencies["@fakeyanss/redoc"].substring(1); // remove ~
 
   try {
     const elapsed = getExecutionTime(startedAt);

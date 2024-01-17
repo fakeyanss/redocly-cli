@@ -104,7 +104,8 @@ paths:
     post:
       tags:
         - pet
-      summary: Add a new pet to the store
+      # summary: Add a new pet to the store
+      summary: 宠物中文测试
       description: Add new pet to the store inventory.
       operationId: addPet
       responses:
