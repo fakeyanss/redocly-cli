@@ -24,6 +24,16 @@ function getPageHTML(
 
   const template = compile(templateSrc);
 
+  const redocCurrentVersion = require('../../../../package.json').dependencies["@fakeyanss/redoc"].substring(1); 
+  const redocJsContent = readFileSync(path.join(__dirname, `./redoc/${redocCurrentVersion}/redoc.standalone.js`), 'utf-8');
+
+  let redocJs = "";
+  if (useRedocPro) {
+    redocJs = "<script src='https://cdn.redoc.ly/reference-docs/latest/redocly-reference-docs.min.js'></script>";
+  } else {
+    redocJs = `<script>${redocJsContent}</script>`;
+  }
+
   return template({
     redocHead: `
   <script>
@@ -33,11 +43,7 @@ function getPageHTML(
   </script>
   <script src="/simplewebsocket.min.js"></script>
   <script src="/hot.js"></script>
-  <script src="${
-    useRedocPro
-      ? 'https://cdn.redoc.ly/reference-docs/latest/redocly-reference-docs.min.js'
-      : 'https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js'
-  }"></script>
+  ${redocJs}
 `,
     redocHTML: `
   <div id="redoc"></div>
