@@ -468,6 +468,11 @@ yargs
           default: '127.0.0.1',
           description: 'Preview host.',
         },
+        disableGoogleFont: {
+          describe: 'Disable Google fonts.',
+          type: 'boolean',
+          default: false,
+        },
         'skip-preprocessor': {
           description: 'Ignore certain preprocessors.',
           array: true,

@@ -1,6 +1,6 @@
 {
   "name": "@fakeyanss/redocly-cli",
-  "version": "1.6.9",
+  "version": "1.6.10",
   "license": "MIT",
   "bin": {
     "openapi": "bin/cli.js",

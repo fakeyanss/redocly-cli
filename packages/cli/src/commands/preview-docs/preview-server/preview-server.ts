@@ -3,6 +3,7 @@ import * as colorette from 'colorette';
 import { getPort } from 'get-port-please';
 import { readFileSync, promises as fsPromises } from 'fs';
 import * as path from 'path';
+import { ServerStyleSheet } from 'styled-components';
 
 import { startHttpServer, startWsServer, respondWithGzip, mimeTypes } from './server';
 import type { IncomingMessage } from 'http';
@@ -13,7 +14,8 @@ function getPageHTML(
   redocOptions: object = {},
   useRedocPro: boolean,
   wsPort: number,
-  host: string
+  host: string,
+  disableGoogleFont: boolean
 ) {
   let templateSrc = readFileSync(htmlTemplate, 'utf-8');
 
@@ -21,6 +23,8 @@ function getPageHTML(
   templateSrc = templateSrc
     .replace(/{?{{redocHead}}}?/, '{{{redocHead}}}')
     .replace('{{redocBody}}', '{{{redocHTML}}}');
+
+  const sheet = new ServerStyleSheet();
 
   const template = compile(templateSrc);
 
@@ -56,12 +60,14 @@ function getPageHTML(
     }
     window[window.__REDOC_EXPORT].init("/openapi.json", ${JSON.stringify(redocOptions)}, container)
   </script>`,
+    disableGoogleFont: disableGoogleFont,
   });
 }
 
 export default async function startPreviewServer(
   port: number,
   host: string,
+  disableGoogleFont: boolean,
   {
     getBundle,
     getOptions,
@@ -75,7 +81,7 @@ export default async function startPreviewServer(
 
     if (request.url?.endsWith('/') || path.extname(request.url!) === '') {
       respondWithGzip(
-        getPageHTML(htmlTemplate || defaultTemplate, getOptions(), useRedocPro, wsPort, host),
+        getPageHTML(htmlTemplate || defaultTemplate, getOptions(), useRedocPro, wsPort, host, disableGoogleFont),
         request,
         response,
         {

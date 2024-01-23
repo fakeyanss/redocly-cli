@@ -12,6 +12,7 @@ export type PreviewDocsOptions = {
   config?: string;
   api?: string;
   force?: boolean;
+  disableGoogleFont?: boolean;
 } & Omit<Skips, 'skip-rule'>;
 
 export async function previewDocs(argv: PreviewDocsOptions, configFromFile: Config) {
@@ -81,7 +82,8 @@ export async function previewDocs(argv: PreviewDocsOptions, configFromFile: Conf
     );
   }
 
-  const hotClients = await startPreviewServer(argv.port, argv.host, {
+  const disableGoogleFont = argv.disableGoogleFont ? true : false;
+  const hotClients = await startPreviewServer(argv.port, argv.host, disableGoogleFont, {
     getBundle,
     getOptions: () => redocOptions,
     useRedocPro: isAuthorized && !redocOptions.useCommunityEdition,
