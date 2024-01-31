@@ -18,7 +18,7 @@ import {
   Referenced,
   isRef,
   RuleSeverity,
-} from '@redocly/openapi-core';
+} from '@fakeyanss/redocly-openapi-core';
 
 import {
   getFallbackApisOrExit,
@@ -37,9 +37,9 @@ import {
   Oas3PathItem,
   Oas3Server,
   Oas3_1Definition,
-} from '@redocly/openapi-core/lib/typings/openapi';
+} from '@fakeyanss/redocly-openapi-core/lib/typings/openapi';
 import { OPENAPI3_METHOD } from './split/types';
-import { BundleResult } from '@redocly/openapi-core/lib/bundle';
+import { BundleResult } from '@fakeyanss/redocly-openapi-core/lib/bundle';
 
 const COMPONENTS = 'components';
 const Tags = 'tags';

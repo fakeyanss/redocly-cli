@@ -14,7 +14,7 @@ import {
   slash,
   Region,
   getMergedConfig,
-} from '@redocly/openapi-core';
+} from '@fakeyanss/redocly-openapi-core';
 import {
   exitWithError,
   printExecutionTime,

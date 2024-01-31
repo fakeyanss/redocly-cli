@@ -5,8 +5,8 @@ import {
   getTotals,
   lint,
   lintConfig,
-} from '@redocly/openapi-core';
-import { ConfigValidationError } from '@redocly/openapi-core/lib/config';
+} from '@fakeyanss/redocly-openapi-core';
+import { ConfigValidationError } from '@fakeyanss/redocly-openapi-core/lib/config';
 import {
   checkIfRulesetExist,
   exitWithError,
@@ -21,8 +21,8 @@ import {
 import { blue, gray } from 'colorette';
 import { performance } from 'perf_hooks';
 
-import type { OutputFormat, ProblemSeverity, Document, RuleSeverity } from '@redocly/openapi-core';
-import type { ResolvedRefMap } from '@redocly/openapi-core/lib/resolve';
+import type { OutputFormat, ProblemSeverity, Document, RuleSeverity } from '@fakeyanss/redocly-openapi-core';
+import type { ResolvedRefMap } from '@fakeyanss/redocly-openapi-core/lib/resolve';
 import type { CommandOptions, Skips, Totals } from '../types';
 
 export type LintOptions = {

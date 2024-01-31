@@ -3,7 +3,7 @@ import * as colorette from 'colorette';
 import { getPort } from 'get-port-please';
 import { readFileSync, promises as fsPromises } from 'fs';
 import * as path from 'path';
-import { ServerStyleSheet } from 'styled-components';
+// import { ServerStyleSheet } from 'styled-components';
 
 import { startHttpServer, startWsServer, respondWithGzip, mimeTypes } from './server';
 import type { IncomingMessage } from 'http';
@@ -24,12 +24,11 @@ function getPageHTML(
     .replace(/{?{{redocHead}}}?/, '{{{redocHead}}}')
     .replace('{{redocBody}}', '{{{redocHTML}}}');
 
-  const sheet = new ServerStyleSheet();
+  // const sheet = new ServerStyleSheet();
 
   const template = compile(templateSrc);
 
-  const redocCurrentVersion = require('../../../../package.json').dependencies["@fakeyanss/redoc"].substring(1); 
-  const redocJsContent = readFileSync(path.join(__dirname, `./redoc/${redocCurrentVersion}/redoc.standalone.js`), 'utf-8');
+  const redocJsContent = readFileSync(path.join(__dirname, `./redoc/redoc.standalone.js`), 'utf-8');
 
   let redocJs = "";
   if (useRedocPro) {

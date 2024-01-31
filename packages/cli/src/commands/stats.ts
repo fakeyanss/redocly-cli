@@ -12,10 +12,10 @@ import {
   walkDocument,
   Stats,
   bundle,
-} from '@redocly/openapi-core';
+} from '@fakeyanss/redocly-openapi-core';
 import { getFallbackApisOrExit } from '../utils';
 import { printExecutionTime } from '../utils';
-import type { StatsAccumulator, StatsName, WalkContext, OutputFormat } from '@redocly/openapi-core';
+import type { StatsAccumulator, StatsName, WalkContext, OutputFormat } from '@fakeyanss/redocly-openapi-core';
 
 const statsAccumulator: StatsAccumulator = {
   refs: { metric: '🚗 References', total: 0, color: 'red', items: new Set() },

@@ -1,4 +1,4 @@
-import type { BundleOutputFormat, Region, Config } from '@redocly/openapi-core';
+import type { BundleOutputFormat, Region, Config } from '@fakeyanss/redocly-openapi-core';
 import type { LintOptions } from './commands/lint';
 import type { BundleOptions } from './commands/bundle';
 import type { JoinOptions } from './commands/join';

@@ -24,7 +24,7 @@ import {
   ResolveError,
   YamlParseError,
   stringifyYaml,
-} from '@redocly/openapi-core';
+} from '@fakeyanss/redocly-openapi-core';
 import { blue, red, yellow } from 'colorette';
 import { existsSync, statSync, writeFileSync } from 'fs';
 import * as path from 'path';
@@ -505,7 +505,7 @@ describe('cleanColors', () => {
 describe('cleanArgs', () => {
   beforeEach(() => {
     // @ts-ignore
-    isAbsoluteUrl = jest.requireActual('@redocly/openapi-core').isAbsoluteUrl;
+    isAbsoluteUrl = jest.requireActual('@fakeyanss/redocly-openapi-core').isAbsoluteUrl;
     // @ts-ignore
     existsSync = (value) => jest.requireActual('fs').existsSync(path.resolve(__dirname, value));
     // @ts-ignore
@@ -539,7 +539,7 @@ describe('cleanArgs', () => {
 describe('cleanRawInput', () => {
   beforeEach(() => {
     // @ts-ignore
-    isAbsoluteUrl = jest.requireActual('@redocly/openapi-core').isAbsoluteUrl;
+    isAbsoluteUrl = jest.requireActual('@fakeyanss/redocly-openapi-core').isAbsoluteUrl;
     // @ts-ignore
     existsSync = (value) => jest.requireActual('fs').existsSync(path.resolve(__dirname, value));
     // @ts-ignore

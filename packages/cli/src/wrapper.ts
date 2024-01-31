@@ -1,4 +1,4 @@
-import { Config, Region, doesYamlFileExist } from '@redocly/openapi-core';
+import { Config, Region, doesYamlFileExist } from '@fakeyanss/redocly-openapi-core';
 import type { Arguments } from 'yargs';
 import { version } from './update-version-notifier';
 import { ExitCode, exitWithError, loadConfigAndHandleErrors, sendTelemetry } from './utils';

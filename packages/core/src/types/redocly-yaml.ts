@@ -700,7 +700,15 @@ const Sidebar: NodeType = {
     spacing: 'SpacingConfig',
     textColor: { type: 'string' },
     width: { type: 'string' },
+    collapseBtn: 'SidebarCollapseBtn',
   },
+};
+
+const SidebarCollapseBtn: NodeType = {
+  properties: {
+    active: { type: 'boolean' },
+    top: { type: 'string' },
+  }
 };
 
 const Heading: NodeType = {
@@ -1055,6 +1063,7 @@ export const ConfigTypes: Record<string, NodeType> = {
   Layout,
   ConfigThemeSchema,
   Sidebar,
+  SidebarCollapseBtn,
   Heading,
   Typography,
   AssertionDefinitionAssertions,

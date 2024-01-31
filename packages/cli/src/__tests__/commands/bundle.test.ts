@@ -1,4 +1,4 @@
-import { lint, bundle, getTotals, getMergedConfig } from '@redocly/openapi-core';
+import { lint, bundle, getTotals, getMergedConfig } from '@fakeyanss/redocly-openapi-core';
 
 import { BundleOptions, handleBundle } from '../../commands/bundle';
 import { handleError } from '../../utils';
@@ -6,7 +6,7 @@ import { commandWrapper } from '../../wrapper';
 import SpyInstance = jest.SpyInstance;
 import { Arguments } from 'yargs';
 
-jest.mock('@redocly/openapi-core');
+jest.mock('@fakeyanss/redocly-openapi-core');
 jest.mock('../../utils');
 
 (getMergedConfig as jest.Mock).mockImplementation((config) => config);

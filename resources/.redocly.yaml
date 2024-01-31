@@ -14,3 +14,11 @@ rules:
     severity: error
     assertions:
       defined: true
+
+theme:
+  openapi:
+    theme:
+      sidebar:
+        collapseBtn:
+          active: true
+          top: 50%

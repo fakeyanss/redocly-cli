@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { parseYaml } from '../packages/core/src/utils'; // not able to import from @redocly/openapi-core
+import { parseYaml } from '../packages/core/src/utils'; // not able to import from @fakeyanss/redocly-openapi-core
 //@ts-ignore
 import { addSerializer } from './specific-snapshot';
 import { spawnSync } from 'child_process';

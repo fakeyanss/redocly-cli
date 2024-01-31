@@ -22,7 +22,7 @@ import {
   Oas3Definition,
   Oas2Definition,
   RedoclyClient,
-} from '@redocly/openapi-core';
+} from '@fakeyanss/redocly-openapi-core';
 import {
   Totals,
   outputExtensions,
@@ -31,13 +31,13 @@ import {
   CommandOptions,
   OutputExtensions,
 } from './types';
-import { isEmptyObject } from '@redocly/openapi-core/lib/utils';
+import { isEmptyObject } from '@fakeyanss/redocly-openapi-core/lib/utils';
 import { Arguments } from 'yargs';
 import { version } from './update-version-notifier';
 import { DESTINATION_REGEX } from './commands/push';
-import { ConfigValidationError } from '@redocly/openapi-core/lib/config';
+import { ConfigValidationError } from '@fakeyanss/redocly-openapi-core/lib/config';
 
-import type { RawConfigProcessor } from '@redocly/openapi-core/lib/config';
+import type { RawConfigProcessor } from '@fakeyanss/redocly-openapi-core/lib/config';
 
 export async function getFallbackApisOrExit(
   argsApis: string[] | undefined,

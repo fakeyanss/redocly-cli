@@ -5,7 +5,7 @@ import {
   getTotals,
   formatProblems,
   doesYamlFileExist,
-} from '@redocly/openapi-core';
+} from '@fakeyanss/redocly-openapi-core';
 import {
   getFallbackApisOrExit,
   getExecutionTime,
@@ -21,7 +21,7 @@ import { commandWrapper } from '../../wrapper';
 import { Arguments } from 'yargs';
 import { blue } from 'colorette';
 
-jest.mock('@redocly/openapi-core');
+jest.mock('@fakeyanss/redocly-openapi-core');
 jest.mock('../../utils');
 jest.mock('perf_hooks');
 

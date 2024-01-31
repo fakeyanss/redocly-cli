@@ -1,4 +1,4 @@
-import { Region, RedoclyClient, Config } from '@redocly/openapi-core';
+import { Region, RedoclyClient, Config } from '@fakeyanss/redocly-openapi-core';
 import { blue, green, gray } from 'colorette';
 import { promptUser } from '../utils';
 

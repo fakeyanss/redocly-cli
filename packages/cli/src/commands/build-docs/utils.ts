@@ -1,6 +1,6 @@
 import { createElement } from 'react';
 import { createStore, Redoc } from '@fakeyanss/redoc';
-import { Config, isAbsoluteUrl } from '@redocly/openapi-core';
+import { Config, isAbsoluteUrl } from '@fakeyanss/redocly-openapi-core';
 
 import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
@@ -76,7 +76,8 @@ export async function getPageHTML(
     ? resolve(configPath ? dirname(configPath) : '', redocOptions.htmlTemplate)
     : join(__dirname, './template.hbs');
   const template = compile(readFileSync(templateFileName).toString());
-  const redocJsContent = readFileSync(join(__dirname, `./redoc/${redocCurrentVersion}/redoc.standalone.js`), 'utf-8');
+  console.log('redoc version:', redocCurrentVersion)
+  const redocJsContent = readFileSync(join(__dirname, `./redoc/redoc.standalone.js`), 'utf-8');
   return template({
     redocHTML: `
       <div id="redoc">${html || ''}</div>

@@ -3,7 +3,7 @@
 import './assert-node-version';
 import * as yargs from 'yargs';
 import { outputExtensions, regionChoices } from './types';
-import { RedoclyClient } from '@redocly/openapi-core';
+import { RedoclyClient } from '@fakeyanss/redocly-openapi-core';
 import { previewDocs } from './commands/preview-docs';
 import { handleStats } from './commands/stats';
 import { handleSplit } from './commands/split';
@@ -17,7 +17,7 @@ import { cacheLatestVersion, notifyUpdateCliVersion } from './update-version-not
 import { commandWrapper } from './wrapper';
 import { version } from './update-version-notifier';
 import type { Arguments } from 'yargs';
-import type { OutputFormat, RuleSeverity } from '@redocly/openapi-core';
+import type { OutputFormat, RuleSeverity } from '@fakeyanss/redocly-openapi-core';
 import type { BuildDocsArgv } from './commands/build-docs/types';
 import { previewProject } from './commands/preview-project';
 import { PRODUCT_PLANS } from './commands/preview-project/constants';

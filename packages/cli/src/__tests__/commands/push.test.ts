@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import { Config, getMergedConfig } from '@redocly/openapi-core';
+import { Config, getMergedConfig } from '@fakeyanss/redocly-openapi-core';
 import { exitWithError } from '../../utils';
 import { getApiRoot, getDestinationProps, handlePush, transformPush } from '../../commands/push';
 import { ConfigFixture } from '../fixtures/config';
@@ -12,13 +12,13 @@ jest.mock('node-fetch', () => ({
     json: jest.fn().mockResolvedValue({}),
   })),
 }));
-jest.mock('@redocly/openapi-core');
+jest.mock('@fakeyanss/redocly-openapi-core');
 jest.mock('../../utils');
 
 (getMergedConfig as jest.Mock).mockImplementation((config) => config);
 
 describe('push', () => {
-  const redoclyClient = require('@redocly/openapi-core').__redoclyClient;
+  const redoclyClient = require('@fakeyanss/redocly-openapi-core').__redoclyClient;
 
   beforeEach(() => {
     jest.spyOn(process.stdout, 'write').mockImplementation(() => true);

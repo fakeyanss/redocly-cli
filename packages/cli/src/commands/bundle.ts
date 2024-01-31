@@ -6,7 +6,7 @@ import {
   bundle,
   Config,
   OutputFormat,
-} from '@redocly/openapi-core';
+} from '@fakeyanss/redocly-openapi-core';
 import {
   dumpBundle,
   getExecutionTime,

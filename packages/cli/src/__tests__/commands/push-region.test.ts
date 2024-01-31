@@ -1,4 +1,4 @@
-import { getMergedConfig } from '@redocly/openapi-core';
+import { getMergedConfig } from '@fakeyanss/redocly-openapi-core';
 import { handlePush } from '../../commands/push';
 import { promptClientToken } from '../../commands/login';
 import { ConfigFixture } from '../fixtures/config';
@@ -10,7 +10,7 @@ jest.mock('node-fetch', () => ({
     json: jest.fn().mockResolvedValue({}),
   })),
 }));
-jest.mock('@redocly/openapi-core');
+jest.mock('@fakeyanss/redocly-openapi-core');
 jest.mock('../../commands/login');
 jest.mock('../../utils');
 
@@ -19,7 +19,7 @@ jest.mock('../../utils');
 const mockPromptClientToken = promptClientToken as jest.MockedFunction<typeof promptClientToken>;
 
 describe('push-with-region', () => {
-  const redoclyClient = require('@redocly/openapi-core').__redoclyClient;
+  const redoclyClient = require('@fakeyanss/redocly-openapi-core').__redoclyClient;
   redoclyClient.isAuthorizedWithRedoclyByRegion = jest.fn().mockResolvedValue(false);
 
   beforeAll(() => {

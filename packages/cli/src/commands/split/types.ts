@@ -10,7 +10,7 @@ import {
   Oas3_1Webhooks,
   Oas2Definition,
   Referenced,
-} from '@redocly/openapi-core';
+} from '@fakeyanss/redocly-openapi-core';
 export {
   Oas3_1Definition,
   Oas3Definition,

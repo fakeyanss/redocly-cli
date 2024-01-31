@@ -1,6 +1,6 @@
 import { iteratePathItems, handleSplit } from '../index';
 import * as path from 'path';
-import * as openapiCore from '@redocly/openapi-core';
+import * as openapiCore from '@fakeyanss/redocly-openapi-core';
 import { ComponentsFiles } from '../types';
 import { blue, green } from 'colorette';
 import { writeToFileByExtension } from '../../../utils';
@@ -12,8 +12,8 @@ jest.mock('../../../utils', () => ({
   writeToFileByExtension: jest.fn(),
 }));
 
-jest.mock('@redocly/openapi-core', () => ({
-  ...jest.requireActual('@redocly/openapi-core'),
+jest.mock('@fakeyanss/redocly-openapi-core', () => ({
+  ...jest.requireActual('@fakeyanss/redocly-openapi-core'),
   isRef: jest.fn(),
 }));
 

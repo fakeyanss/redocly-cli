@@ -5,7 +5,7 @@ import { performance } from 'perf_hooks';
 
 import { getObjectOrJSON, getPageHTML } from './utils';
 import type { BuildDocsArgv } from './types';
-import { Config, getMergedConfig, isAbsoluteUrl } from '@redocly/openapi-core';
+import { Config, getMergedConfig, isAbsoluteUrl } from '@fakeyanss/redocly-openapi-core';
 import { exitWithError, getExecutionTime, getFallbackApisOrExit } from '../../utils';
 
 export const handlerBuildCommand = async (argv: BuildDocsArgv, configFromFile: Config) => {

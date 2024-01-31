@@ -1,7 +1,7 @@
 import { ConfigFixture } from './../../__tests__/fixtures/config';
 import { firstDocument, secondDocument } from '../documents';
 
-import type { Document } from '@redocly/openapi-core';
+import type { Document } from '@fakeyanss/redocly-openapi-core';
 
 export const __redoclyClient = {
   isAuthorizedWithRedocly: jest.fn().mockResolvedValue(true),
